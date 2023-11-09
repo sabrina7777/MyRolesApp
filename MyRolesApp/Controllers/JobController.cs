@@ -27,6 +27,12 @@ namespace MyRolesApp.Controllers
                           Problem("Entity set 'ApplicationDbContext.Job'  is null.");
         }
 
+        // GET: Job/ShowSearchForm
+        public async Task<IActionResult> ShowSearchForm()
+        {
+            return View("ShowSearchForm");
+        }
+
         // GET: Job/Details/5
         public async Task<IActionResult> Details(int? id)
         {
