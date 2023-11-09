@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[Job] (
+    [JobId]    INT            IDENTITY (1, 1) NOT NULL,
+    [IsActive] BIT            NOT NULL,
+    [JobTitle] NVARCHAR (MAX) NOT NULL,
+    [NextJob]  NVARCHAR (MAX) NULL,
+    CONSTRAINT [PK_Job] PRIMARY KEY CLUSTERED ([JobId] ASC)
+);
+
