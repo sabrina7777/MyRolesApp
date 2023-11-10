@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -33,6 +34,15 @@ namespace MyRolesApp.Controllers
             return View("ShowSearchForm");
         }
 
+        // POST: Job/ShowSearchResults
+        public async Task<IActionResult> ShowSearchResults(String SearchPhrase)
+        {
+           //return View(await _context.Job.ToListAsync());
+            //shows every job in database
+            return View("Index", await _context.Job.Where( j => j.JobTitle.Contains(SearchPhrase)).ToListAsync());
+
+        }
+
         // GET: Job/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -52,6 +62,7 @@ namespace MyRolesApp.Controllers
         }
 
         // GET: Job/Create
+        //[Authorize] - Requires you to be logged in to add a new job
         public IActionResult Create()
         {
             return View();
@@ -60,6 +71,7 @@ namespace MyRolesApp.Controllers
         // POST: Job/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        //[Authorize] - Posts the added job and items authorized user creates to database
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("JobId,IsActive,JobTitle,NextJob")] Job job)
@@ -74,6 +86,7 @@ namespace MyRolesApp.Controllers
         }
 
         // GET: Job/Edit/5
+        //[Authorize] - cant edit unless authorized 
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Job == null)
@@ -92,6 +105,7 @@ namespace MyRolesApp.Controllers
         // POST: Job/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        //[Authorize] - Processing function for edit method, cant edit unless authorized 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("JobId,IsActive,JobTitle,NextJob")] Job job)
@@ -125,6 +139,7 @@ namespace MyRolesApp.Controllers
         }
 
         // GET: Job/Delete/5
+        //[Authorize] - Cant detele unless authorized 
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Job == null)
@@ -143,8 +158,10 @@ namespace MyRolesApp.Controllers
         }
 
         // POST: Job/Delete/5
+        
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        //[Authorize] - Delete confirmed
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             if (_context.Job == null)

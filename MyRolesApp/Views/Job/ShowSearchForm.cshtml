@@ -1,24 +1,15 @@
-﻿@model MyRolesApp.Models.Job
-
-<h4>Job</h4>
+﻿<h4>Job Search</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="ShowSearchForm">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <form asp-action="ShowSearchResults">
             
             <div class="form-group">
-                <label asp-for="JobTitle" class="control-label"></label>
-                <input asp-for="JobTitle" class="form-control" />
-                <span asp-validation-for="JobTitle" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="NextJob" class="control-label"></label>
-                <input asp-for="NextJob" class="form-control" />
-                <span asp-validation-for="NextJob" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <label for="SearchPhrase" class="control-label"></label>
+                <input name="SearchPhrase" class="form-control" />
+             </div>
+           <div class="form-group">
+                <input type="submit" value="Search" class="btn btn-primary" />
             </div>
         </form>
     </div>
@@ -28,6 +19,4 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
