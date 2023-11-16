@@ -39,7 +39,7 @@ namespace MyRolesApp.Controllers
         {
            //return View(await _context.Job.ToListAsync());
             //shows every job in database
-            return View("Index", await _context.Job.Where( j => j.JobTitle.Contains(SearchPhrase)).ToListAsync());
+            return View("Index", await _context.Job.Where( j => j.Title.Contains(SearchPhrase)).ToListAsync());
 
         }
 
@@ -74,7 +74,8 @@ namespace MyRolesApp.Controllers
         //[Authorize] - Posts the added job and items authorized user creates to database
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("JobId,IsActive,JobTitle,NextJob")] Job job)
+        public async Task<IActionResult> Create([Bind("JobId,IsActive,Title,Description,NextJob")] Job job)
+            //******check nextjob here if link is right
         {
             if (ModelState.IsValid)
             {
@@ -108,7 +109,7 @@ namespace MyRolesApp.Controllers
         //[Authorize] - Processing function for edit method, cant edit unless authorized 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("JobId,IsActive,JobTitle,NextJob")] Job job)
+        public async Task<IActionResult> Edit(int id, [Bind("JobId,IsActive,Title,Description,NextJob")] Job job)
         {
             if (id != job.JobId)
             {

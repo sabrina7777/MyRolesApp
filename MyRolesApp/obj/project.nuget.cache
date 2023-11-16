@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Gq6rohuj53A4D+R4gMBsz7wL/kcyPtZyV7TIlzXGMpU4eR3rmN07xkZx6B7YJLUVQ1++5yo28KAFeJrW36SaJQ==",
+  "dgSpecHash": "ZFt+CqkuzJZT5FgbYayzRDTQmwUiXKnsTHzkwPgwDTUvO9Gcc91oZw8OeONM6I7XgRf4ZTbVOu2FgN7vvFwOnA==",
   "success": true,
   "projectFilePath": "C:\\Users\\sabri\\Documents\\Projects\\MyRolesApp\\MyRolesApp\\MyRolesApp.csproj",
   "expectedPackageFiles": [
@@ -227,7 +227,11 @@
     "C:\\Users\\sabri\\.nuget\\packages\\system.threading.timer\\4.3.0\\system.threading.timer.4.3.0.nupkg.sha512",
     "C:\\Users\\sabri\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\sabri\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
-    "C:\\Users\\sabri\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
+    "C:\\Users\\sabri\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
+    "C:\\Users\\sabri\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.25\\microsoft.windowsdesktop.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\sabri\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.25\\microsoft.netcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\sabri\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.25\\microsoft.aspnetcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\sabri\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.25\\microsoft.netcore.app.host.win-x64.6.0.25.nupkg.sha512"
   ],
   "logs": []
 }
